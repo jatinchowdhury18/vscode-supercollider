@@ -1,0 +1,67 @@
+{
+    "name": "vscode-supercollider",
+    "displayName": "vscode-supercollider",
+    "description": "LEAVE BLANK",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.32.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "activationEvents": [
+        "onLanguage:supercollider",
+        "onCommand:supercollider.execInTerminal"
+    ],
+    "main": "./extension",
+    "icon": "icon.png",
+    "contributes": {
+        "keybindings": [
+            {
+                "command": "supercollider.execInTerminal",
+                "key": "ctrl+shift+b",
+                "when": "resourceExtname == .scd"
+            }
+        ],
+        "commands": [
+            {
+                "command": "supercollider.execInTerminal",
+                "title": "Run this SuperCollider file in Terminal",
+                "category": "SuperCollider"
+            }
+        ],
+        "languages": [
+            {
+                "id": "supercollider",
+                "aliases": [
+                    "SuperCollider",
+                    "supercollider"
+                ],
+                "extensions": [
+                    ".sc",
+                    ".scd",
+                    ".schelp"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "supercollider",
+                "scopeName": "source.ruby",
+                "path": "./syntaxes/supercollider.tmLanguage.json"
+            }
+        ]
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "eslint": "^4.11.0",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
