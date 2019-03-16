@@ -17,19 +17,12 @@ properly, you must have SuperCollider already installed.
 
 ## Extension Settings
 
-@TODO
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+* `supercollider.scPath`: set to the folder containing your 
+SuperCollider installation. Ex: `"C:\\Program Files\\SuperCollider-3.9.3"`
 
 ## Known Issues
-
   - Specify sclang path
   - server stuff?
   - highlighting, autocomplete

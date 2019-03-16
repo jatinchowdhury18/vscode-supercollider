@@ -27,7 +27,8 @@ function getTerminal() {
 }
 // END TERMINAL
 
-function resolve(editor, command, scPath) {
+function resolve(editor, command) {
+    const scPath = vscode.workspace.getConfiguration().get('supercollider.scPath') + "\\sclang.exe";
     return command
         .replace(/\${file}/g, `${editor.document.fileName}`)
         .replace(/\${scPath}/g, scPath)
@@ -48,12 +49,10 @@ function warn(msg) {
 
 function handleInput(editor) {
     vscode.workspace.saveAll(false);
-    const scPath = "C:/Program Files/SuperCollider-3.9.3/sclang.exe";
     let command = "& \"${scPath}\" ${file}";
     const cmd = resolve(
         editor,
-        command,
-        scPath
+        command
     )
 
     run(cmd);

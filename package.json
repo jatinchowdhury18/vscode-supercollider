@@ -16,6 +16,19 @@
     "main": "./extension",
     "icon": "icon.png",
     "contributes": {
+        "configuration":[
+            {
+                "type": "object",
+                "title": "SuperCollider Configuration",
+                "properties": {
+                    "supercollider.scPath": {
+                        "type": ["string", "null"],
+                        "default": null,
+                        "description": "Specifies the folder path for your SuperCollider installation"
+                    }
+                }
+            }
+        ],
         "keybindings": [
             {
                 "command": "supercollider.execInTerminal",
