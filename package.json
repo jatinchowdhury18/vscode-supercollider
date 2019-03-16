@@ -61,7 +61,7 @@
         "grammars": [
             {
                 "language": "supercollider",
-                "scopeName": "source.ruby",
+                "scopeName": "source.supercollider",
                 "path": "./syntaxes/supercollider.tmLanguage.json"
             }
         ]
