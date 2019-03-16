@@ -9,6 +9,10 @@
     "categories": [
         "Programming Languages"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jatinchowdhury18/vscode-supercollider"
+    },
     "activationEvents": [
         "onLanguage:supercollider",
         "onCommand:supercollider.execInTerminal"
@@ -16,13 +20,16 @@
     "main": "./extension",
     "icon": "icon.png",
     "contributes": {
-        "configuration":[
+        "configuration": [
             {
                 "type": "object",
                 "title": "SuperCollider Configuration",
                 "properties": {
                     "supercollider.scPath": {
-                        "type": ["string", "null"],
+                        "type": [
+                            "string",
+                            "null"
+                        ],
                         "default": null,
                         "description": "Specifies the folder path for your SuperCollider installation"
                     }
@@ -65,10 +72,6 @@
                 "path": "./syntaxes/supercollider.tmLanguage.json"
             }
         ]
-    },
-    "scripts": {
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
         "typescript": "^2.6.1",
