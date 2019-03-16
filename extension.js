@@ -39,8 +39,8 @@ function run(command) {
 
     terminal.show(true);
 
-    vscode.commands.executeCommand('workbench.action.terminal.scrollToBottom')
-    terminal.sendText(command, true)
+    vscode.commands.executeCommand('workbench.action.terminal.scrollToBottom');
+    terminal.sendText(command, true);
 }
 
 function warn(msg) {
@@ -59,7 +59,7 @@ function handleInput(editor) {
 }
 
 function activate(context) {
-    let disposable = vscode.commands.registerCommand('supercollider.execInTerminal', () => {
+    let execInTerminal = vscode.commands.registerCommand('supercollider.execInTerminal', () => {
         const editor = vscode.window.activeTextEditor
         if (!editor) {
             warn('no active editor');
@@ -68,8 +68,13 @@ function activate(context) {
 
         handleInput(editor)
     });
+    context.subscriptions.push(execInTerminal);
 
-    context.subscriptions.push(disposable);
+    let killTerminal = vscode.commands.registerCommand('supercollider.killTerminal', () => {
+        if(_activeTerminal)
+            disposeTerminal();
+    });
+    context.subscriptions.push(killTerminal);
 }
 exports.activate = activate;
 

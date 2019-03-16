@@ -15,7 +15,8 @@
     },
     "activationEvents": [
         "onLanguage:supercollider",
-        "onCommand:supercollider.execInTerminal"
+        "onCommand:supercollider.execInTerminal",
+        "onCommand:supercollider.killTerminal"
     ],
     "main": "./extension",
     "icon": "icon.png",
@@ -41,12 +42,21 @@
                 "command": "supercollider.execInTerminal",
                 "key": "ctrl+shift+b",
                 "when": "resourceExtname == .scd"
+            },
+            {
+                "command": "supercollider.killTerminal",
+                "key": "ctrl+."
             }
         ],
         "commands": [
             {
                 "command": "supercollider.execInTerminal",
                 "title": "Run this SuperCollider file in Terminal",
+                "category": "SuperCollider"
+            },
+            {
+                "command": "supercollider.killTerminal",
+                "title": "Kill the SuperCollider Terminal",
                 "category": "SuperCollider"
             }
         ],
