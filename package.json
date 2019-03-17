@@ -1,8 +1,11 @@
 {
     "name": "vscode-supercollider",
     "displayName": "vscode-supercollider",
-    "description": "LEAVE BLANK",
+    "description": "Language support for the SuperCollider language",
     "version": "0.0.1",
+    "publisher": "jatinchowdhury18",
+    "homepage": "https://github.com/jatinchowdhury18/vscode-supercollider/blob/master/README.md",
+    "license": "MIT",
     "engines": {
         "vscode": "^1.32.0"
     },
