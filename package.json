@@ -2,7 +2,7 @@
     "name": "vscode-supercollider",
     "displayName": "vscode-supercollider",
     "description": "Language support for the SuperCollider language",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "jatinchowdhury18",
     "homepage": "https://github.com/jatinchowdhury18/vscode-supercollider/blob/master/README.md",
     "license": "MIT",
@@ -29,13 +29,13 @@
                 "type": "object",
                 "title": "SuperCollider Configuration",
                 "properties": {
-                    "supercollider.scPath": {
+                    "supercollider.sclangCmd": {
                         "type": [
                             "string",
                             "null"
                         ],
                         "default": null,
-                        "description": "Specifies the folder path for your SuperCollider installation"
+                        "description": "Specifies the correct sclang command for your SuperCollider installation."
                     }
                 }
             }
@@ -91,6 +91,7 @@
         "vscode": "^1.1.6",
         "eslint": "^4.11.0",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "@types/mocha": "^2.2.42",
+        "tar": ">=4.4.2"
     }
 }

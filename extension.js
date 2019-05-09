@@ -28,10 +28,10 @@ function getTerminal() {
 // END TERMINAL
 
 function resolve(editor, command) {
-    const scPath = vscode.workspace.getConfiguration().get('supercollider.scPath') + "\\sclang.exe";
+    const scPath = vscode.workspace.getConfiguration().get('supercollider.sclangCmd');
     return command
         .replace(/\${file}/g, `${editor.document.fileName}`)
-        .replace(/\${scPath}/g, scPath)
+        .replace(/\${sclangCmd}/g, scPath)
 }
 
 function run(command) {
@@ -49,7 +49,7 @@ function warn(msg) {
 
 function handleInput(editor) {
     vscode.workspace.saveAll(false);
-    let command = "& \"${scPath}\" ${file}";
+    let command = "${sclangCmd} ${file}";
     const cmd = resolve(
         editor,
         command

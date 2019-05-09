@@ -22,8 +22,11 @@ Disclaimer: This extension has only been tested on Windows.
 [SuperCollider website](https://supercollider.github.io/).
 
 3. In VS Code use the command `Preferences: Open Settings (JSON)`.
-Enter the setting `"supercollider.scPath": "[SuperCollider Installation folder]"`.
-Ex: `"C:\\Program Files\\SuperCollider-3.9.3"`.
+Enter the setting `"supercollider.sclangCmd": "[Command to run sclang]"`.
+This will depend on your operating system, and on the default shell
+you use within vscode. Examples:
+  - (Windows, default shell: powershell) `"supercollider.sclangCmd": "& \"C:\\Program Files\\SuperCollider-3.9.3\\sclang.exe\""`
+  - (OSX, default shell: bash) `"supercollider.sclangCmd": "/Applications/SuperCollider/SuperCollider.app/Contents/MacOS/sclang"`
 
 4. Open a SuperCollider file (`.scd`). To run use
 `Ctrl + Shift + b`. Once your SuperCollider script
